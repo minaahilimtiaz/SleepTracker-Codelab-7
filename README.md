@@ -1,7 +1,7 @@
-TrackMySleepQuality with RecyclerView - Starter Code for 7.1
-============================================================
+TrackMySleepQuality with RecyclerView - Solution Code for 7.4
+=============================================================
 
-Starter code for Android Kotlin Fundamentals Codelab 7.1 RecyclerView Fundamentals
+Solution code for Android Kotlin Fundamentals Codelab 7.4 Interacting with RecyclerView items
 
 Introduction
 ------------
@@ -9,9 +9,8 @@ Introduction
 TrackMySleepQuality is an app for recording sleep data for each night.
 You can record a start and stop time, assign a quality rating, and clear the database.
 
-In this codelab you will learn how to use a RecyclerView in your Android Kotlin app
-to efficiently display lists of items.
-
+Learn how to make items in the RecyclerView clickable.
+Implement a click listener and navigate on click in your Android Kotlin app.
 
 Pre-requisites
 --------------
@@ -23,7 +22,10 @@ You should be familiar with:
 * Using view models, view model factories, transformations, and LiveData and their observers.
 * Creating a Room database, creating a DAO, and defining entities.
 * Using coroutines for database tasks and other long-running tasks.
-
+* How to implement a basic RecyclerView with an Adapter, ViewHolder, and item layout.
+* How to implement data binding for RecyclerView.
+* How to create and use binding adapters to transform data.
+* How to use GridLayoutManager.
 
 
 Getting Started

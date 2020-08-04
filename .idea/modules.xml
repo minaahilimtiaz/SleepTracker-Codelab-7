@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RecyclerViewFundamentals-Starter.iml" filepath="$PROJECT_DIR$/.idea/modules/RecyclerViewFundamentals-Starter.iml" group="RecyclerViewFundamentals-Starter" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="RecyclerViewFundamentals-Starter/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RecyclerViewClickHandler.iml" filepath="$PROJECT_DIR$/.idea/modules/RecyclerViewClickHandler.iml" group="RecyclerViewClickHandler" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="RecyclerViewClickHandler/app" />
     </modules>
   </component>
 </project>

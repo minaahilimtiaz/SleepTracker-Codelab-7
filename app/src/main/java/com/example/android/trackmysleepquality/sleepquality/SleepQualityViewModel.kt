@@ -83,7 +83,6 @@ class SleepQualityViewModel(
         viewModelJob.cancel()
     }
 
-
     /**
      * Call this immediately after navigating to [SleepTrackerFragment]
      */

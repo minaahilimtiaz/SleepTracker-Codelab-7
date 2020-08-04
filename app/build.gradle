@@ -23,7 +23,7 @@ apply plugin: 'androidx.navigation.safeargs'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.android.trackmysleepquality"
+        applicationId "com.example.android.trackmysleepqualityrecyclerview"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
