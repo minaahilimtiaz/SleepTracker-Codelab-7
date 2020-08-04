@@ -29,56 +29,30 @@ import com.example.android.trackmysleepquality.R
 import com.example.android.trackmysleepquality.database.SleepDatabase
 import com.example.android.trackmysleepquality.databinding.FragmentSleepDetailBinding
 
-
-/**
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [SleepDetailFragment.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [SleepDetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- *
- */
 class SleepDetailFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        // Get a reference to the binding object and inflate the fragment views.
-        val binding: FragmentSleepDetailBinding = DataBindingUtil.inflate(
-                inflater, R.layout.fragment_sleep_detail, container, false)
-
+        val binding: FragmentSleepDetailBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_sleep_detail, container, false)
         val application = requireNotNull(this.activity).application
         val arguments = SleepDetailFragmentArgs.fromBundle(arguments)
-
-        // Create an instance of the ViewModel Factory.
         val dataSource = SleepDatabase.getInstance(application).sleepDatabaseDao
         val viewModelFactory = SleepDetailViewModelFactory(arguments.sleepNightKey, dataSource)
-
-        // Get a reference to the ViewModel associated with this fragment.
-        val sleepDetailViewModel =
-                ViewModelProviders.of(
-                        this, viewModelFactory).get(SleepDetailViewModel::class.java)
-
-        // To use the View Model with data binding, you have to explicitly
-        // give the binding object a reference to it.
+        val sleepDetailViewModel = ViewModelProviders.of(this, viewModelFactory).get(SleepDetailViewModel::class.java)
         binding.sleepDetailViewModel = sleepDetailViewModel
-
         binding.setLifecycleOwner(this)
-
-        // Add an Observer to the state variable for Navigating when a Quality icon is tapped.
-        sleepDetailViewModel.navigateToSleepTracker.observe(this, Observer {
-            if (it == true) { // Observed state is true.
-                this.findNavController().navigate(
-                        SleepDetailFragmentDirections.actionSleepDetailFragmentToSleepTrackerFragment())
-                // Reset state to make sure we only navigate once, even if the device
-                // has a configuration change.
-                sleepDetailViewModel.doneNavigating()
-            }
-        })
-
+        navigatingToSleepTrackerFragment(this, sleepDetailViewModel)
         return binding.root
     }
 
-
+    //my addition
+    private fun navigatingToSleepTrackerFragment(fragmentObj:SleepDetailFragment, sleepDetailViewModel:SleepDetailViewModel){
+        sleepDetailViewModel.navigateToSleepTracker.observe(this, Observer {
+            if (it == true) {
+                fragmentObj.findNavController().navigate(SleepDetailFragmentDirections.actionSleepDetailFragmentToSleepTrackerFragment())
+                sleepDetailViewModel.doneNavigating()
+            }
+        })
+    }
 }
+

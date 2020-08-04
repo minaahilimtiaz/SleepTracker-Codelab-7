@@ -1,7 +1,7 @@
-TrackMySleepQuality with RecyclerView - Solution Code for 7.4
-=============================================================
+TrackMySleepQuality with RecyclerView - Starter Code for 7.4
+============================================================
 
-Solution code for Android Kotlin Fundamentals Codelab 7.4 Interacting with RecyclerView items
+Starter code for Android Kotlin Fundamentals Codelab 7.4 Interacting with RecyclerView items
 
 Introduction
 ------------
